@@ -1,0 +1,13 @@
+$font-body: (Roboto, sans-serif);
+$font-icons: (Shrikhand, sans-serif);
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$search-color: #EAEAEA;
+$bg-color: #F6F6F6;
+$button-color: linear-gradient(193deg, $primary-color, $secondary-color);
+$button-hover: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, $primary-color, $secondary-color);
+
+@mixin desktop {
+    @media screen and (min-width: 1024px) { @content;} 
+}
