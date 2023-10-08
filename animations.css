@@ -60,13 +60,14 @@
 }
 .card:hover .style-4 {
   margin-right: 60px;
+  transition-duration: 0.5s;
 }
 .card:hover .btn {
   right: 0;
 }
 
 .fa-heart:hover:before {
-  transition: all 0.1s ease-in-out;
+  transition: all 2s ease-in-out;
   -webkit-background-clip: text;
           background-clip: text;
   font-weight: 900;

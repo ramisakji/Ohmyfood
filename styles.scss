@@ -108,17 +108,26 @@ header .box {
     }
 }
 
-.functioning {
+.plan {
+    display: flex;
+    justify-content: center;
+    @include desktop
+    {
+        
+    }
+   .functioning {
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin: 48px 20px 68px 17px;
     align-items: flex-start;
     @include desktop
-        {
-            margin: 0px;
-            padding: 50px 100px;
-            gap: 25px;
-        }
+    {
+        margin: 0px;
+        padding: 50px 180px;
+        gap: 25px;
+        align-self: stretch;
+    }
     .style-1 {
         justify-content: flex-start;
     }
@@ -146,6 +155,10 @@ header .box {
             border-radius: 20px;
             background: $bg-color;
             box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+            @include desktop
+            {
+                width: 33%;
+            }
         .circle {
             position: relative;
             width: 24px;
@@ -162,6 +175,7 @@ header .box {
         }
     }
 }
+}
 
 .restaurant {
     display: flex;
@@ -170,7 +184,7 @@ header .box {
     padding: 48px 18px 66px 17px;
     @include desktop
     {
-        padding: 30px 100px;
+        padding: 30px 180px;
         gap: 28px;
     }
     .style-1 {
@@ -201,6 +215,10 @@ header .box {
             border-radius: 15px;
             box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
             background: white;
+            @include desktop
+            {
+                max-width: 1200px;
+            }
             img {
                 display: flex;
                 height: 75%;
@@ -238,10 +256,12 @@ header .box {
                 .style-2 {
                     font-size: 18px;
                     font-weight: 700;
+                    color: black;
                 }
                 .style-3 {
                     font-size: 17px;
                     font-weight: 300;
+                    color: black;
                 }     
                 }
             } 
@@ -262,6 +282,7 @@ header .box {
         height: 54px;
         flex-direction: row-reverse;
         padding: 30px 25px;
+        gap: 70px;
     }
     .logo {
         display: flex;
@@ -282,16 +303,37 @@ header .box {
         flex-direction: column;
         gap: 7px;
         font-size: 16px;
-        font-weight: 500;
         @include desktop
         {
         flex-direction: row;
         align-items: flex-end;
+        gap: 35px;
         }
-       .icon {
+        .style-1 {
+            display: flex;
+            flex-direction: column;
+            font-weight: 500;
+            gap: 7px;
+            @include desktop
+            {
+            flex-direction: row;
+            }
+        }
+        .icon {
             display: flex;
             align-items: center;
             gap: 11px;  
+        }
+        .style-2 {
+            display: flex;
+            flex-direction: column;
+            font-weight: 400;
+            gap: 7px;
+            @include desktop
+            {
+            flex-direction: row;
+            gap: 20px;
+            }
         }
     }
 }

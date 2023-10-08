@@ -89,13 +89,14 @@
 }
 .card:hover .style-4 {
   margin-right: 60px;
+  transition-duration: 0.5s;
 }
 .card:hover .btn {
   right: 0;
 }
 
 .fa-heart:hover:before {
-  transition: all 0.1s ease-in-out;
+  transition: all 2s ease-in-out;
   -webkit-background-clip: text;
           background-clip: text;
   font-weight: 900;
@@ -214,23 +215,29 @@ header .box {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
-.functioning {
+.plan {
+  display: flex;
+  justify-content: center;
+}
+.plan .functioning {
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin: 48px 20px 68px 17px;
   align-items: flex-start;
 }
 @media screen and (min-width: 1024px) {
-  .functioning {
+  .plan .functioning {
     margin: 0px;
-    padding: 50px 100px;
+    padding: 50px 180px;
     gap: 25px;
+    align-self: stretch;
   }
 }
-.functioning .style-1 {
+.plan .functioning .style-1 {
   justify-content: flex-start;
 }
-.functioning .list {
+.plan .functioning .list {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -242,12 +249,12 @@ header .box {
   gap: 25px;
 }
 @media screen and (min-width: 1024px) {
-  .functioning .list {
+  .plan .functioning .list {
     flex-direction: row;
     margin-top: 0px;
   }
 }
-.functioning .list .style {
+.plan .functioning .list .style {
   display: flex;
   width: 322px;
   height: 72.4px;
@@ -257,7 +264,12 @@ header .box {
   background: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
-.functioning .list .style .circle {
+@media screen and (min-width: 1024px) {
+  .plan .functioning .list .style {
+    width: 33%;
+  }
+}
+.plan .functioning .list .style .circle {
   position: relative;
   width: 24px;
   height: 21px;
@@ -279,7 +291,7 @@ header .box {
 }
 @media screen and (min-width: 1024px) {
   .restaurant {
-    padding: 30px 100px;
+    padding: 30px 180px;
     gap: 28px;
   }
 }
@@ -313,6 +325,11 @@ header .box {
   border-radius: 15px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   background: white;
+}
+@media screen and (min-width: 1024px) {
+  .restaurant .box .card {
+    max-width: 1200px;
+  }
 }
 .restaurant .box .card img {
   display: flex;
@@ -354,10 +371,12 @@ header .box {
 .restaurant .box .card .content .txt .style-2 {
   font-size: 18px;
   font-weight: 700;
+  color: black;
 }
 .restaurant .box .card .content .txt .style-3 {
   font-size: 17px;
   font-weight: 300;
+  color: black;
 }
 
 /****** Footer ***********/
@@ -374,6 +393,7 @@ header .box {
     height: 54px;
     flex-direction: row-reverse;
     padding: 30px 25px;
+    gap: 70px;
   }
 }
 .footer .logo {
@@ -396,18 +416,41 @@ header .box {
   flex-direction: column;
   gap: 7px;
   font-size: 16px;
-  font-weight: 500;
 }
 @media screen and (min-width: 1024px) {
   .footer .box {
     flex-direction: row;
     align-items: flex-end;
+    gap: 35px;
+  }
+}
+.footer .box .style-1 {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  gap: 7px;
+}
+@media screen and (min-width: 1024px) {
+  .footer .box .style-1 {
+    flex-direction: row;
   }
 }
 .footer .box .icon {
   display: flex;
   align-items: center;
   gap: 11px;
+}
+.footer .box .style-2 {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  gap: 7px;
+}
+@media screen and (min-width: 1024px) {
+  .footer .box .style-2 {
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 
 /****** Menu ***********/
