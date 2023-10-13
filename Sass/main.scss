@@ -1,0 +1,642 @@
+/****** Variables ***********/
+$font-body: (Roboto, sans-serif);
+$font-icons: (Shrikhand, sans-serif);
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$search-color: #EAEAEA;
+$bg-color: #F6F6F6;
+$button-color: linear-gradient(193deg, $primary-color, $secondary-color);
+$button-hover: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, $primary-color, $secondary-color);
+
+/****** Mixin ***********/
+@mixin desktop {
+    @media screen and (min-width: 1024px) { @content;} 
+}
+
+/****** Keyframes ***********/
+@keyframes loader-background {
+    0%
+  {
+    opacity: 1;
+  }
+    100%
+  {
+    opacity: 0;
+    z-index: -100;
+  }
+}
+
+@keyframes loader {
+    0%
+  {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+    100%
+  {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes card
+{
+  from 
+  {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to 
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/****** Animations ***********/
+.loader {
+    animation: loader-background 0.01s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    z-index: 100;
+    position: fixed;
+    text-align: center;
+    padding-top: 200px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,50);
+}
+
+.loader_animation {
+    animation: loader 1.5s linear;
+    position: relative;
+    img {
+      width: 50%;
+    }
+}
+
+.animation-card {
+    animation-name: card;
+    animation-duration: 1000ms;
+    animation-fill-mode: backwards;
+}
+
+.animation-1 {
+    animation-delay: .25s;
+}
+
+.animation-2 {
+    animation-delay: 1s;
+}
+
+.animation-3 {
+    animation-delay: 2s;
+}
+
+.card {
+    position: relative;
+    .btn {
+        border: 0;
+        position: absolute;
+        text-align: center;
+        padding-top: 25px;
+        top: 0px;
+        right: -70px;
+        background: $tertiary-color;
+        height: 100%;
+        width: 59px;
+        border-radius: 0 15px 15px 0;
+        transition-duration: 0.5s;
+    .fa-circle-check {
+        color: white;
+        transition-duration: 0.5s;
+        }
+    }
+    &:hover {
+        .style-4 {
+            margin-right: 60px;
+            transition-duration: 0.5s;
+            }
+        .btn {
+            right: 0;
+            }  
+        }
+    }
+
+.fa-heart:hover:before {
+    transition: all 2s ease-in-out;
+    background-clip: text;
+    font-weight: 900;
+    background-image: $button-color;
+    -webkit-text-fill-color: transparent;
+    }
+
+/****** General ***********/
+body {
+    font-family: $font-body;
+    font-style: normal;
+    line-height: normal;
+    margin: 0px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+.footer a {
+    color: white;
+}
+
+/****** Header ***********/
+header {
+    display: flex;
+    height: 63px;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-family: $font-icons;
+        justify-content: center;
+        padding: 0px 19px 0px 16px;
+        font-size: 30px;
+        font-weight: 400;
+    }
+}
+
+header .box {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 14px 89px 13px 17px;
+    gap: 57px;
+}
+
+/****** Main ***********/
+.search {
+    display: flex;
+    position: relative;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    background: $search-color;
+    .fa-sharp {
+        color: black;
+    }
+    .txt {
+        background: $search-color;
+        opacity: 1;
+        border: none;
+    .txt::placeholder {
+        background: $search-color;
+        color: black;
+        opacity: 1;
+        border: none;
+    }
+    }
+}
+
+.explorer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $bg-color;
+    .style-1 {
+        text-align: center;
+        height: 68px;
+        margin: 39px 58px 0px 42px;
+    }
+    .style-2 {
+        text-align: center;
+        height: 46px;
+        font-size: 18px;
+        font-weight: 300;
+        color: grey;
+    }
+    .style-3 {
+        margin-top: 27px;
+        margin-bottom: 57px;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 13px 18.75px;
+        color: white;
+        border-radius: 25px;
+        border: none;
+        background: $button-color;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        &:hover {
+            background: $button-hover;
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+        }
+    }
+}
+
+.plan {
+    display: flex;
+    justify-content: center;
+   .functioning {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 48px 20px 68px 17px;
+    align-items: flex-start;
+    @include desktop
+    {
+        margin: 0px;
+        padding: 50px 180px;
+        gap: 25px;
+        align-self: stretch;
+    }
+    .style-1 {
+        justify-content: flex-start;
+    }
+    .list {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 26px;
+        padding-left: 15px;
+        gap: 25px;
+        @include desktop
+        {
+           flex-direction: row;
+           margin-top: 0px;
+        }
+        .style {
+            display: flex;
+            width: 322px;
+            height: 72.4px;
+            gap: 20px;
+            align-items: center;
+            border-radius: 20px;
+            background: $bg-color;
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+            @include desktop
+            {
+                width: 33%;
+            }
+        .circle {
+            position: relative;
+            width: 24px;
+            height: 21px;
+            text-align: center;
+            padding-top: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            border-radius: 50%;
+            left: -10px;
+            background: $primary-color;
+        }
+        .fa-mobile-screen-button {
+            color: #7e7e7e;
+        }
+        .fa-list-ul {
+            color: #7e7e7e;
+        }
+        .fa-store {
+            color: $primary-color;
+        }
+        }
+    }
+}
+}
+
+.restaurant {
+    display: flex;
+    flex-direction: column;
+    background: $bg-color;
+    padding: 48px 18px 66px 17px;
+    @include desktop
+    {
+        padding: 30px 180px;
+        gap: 28px;
+    }
+    .style-1 {
+        justify-content: flex-start;
+    }
+    .box {
+        display: grid;
+        grid-template-rows: 1fr;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 66px;
+        gap: 18px;
+        @include desktop
+        {
+            flex-direction: column;
+            grid-template-columns: 1fr 1fr;
+            margin: 0px;
+            gap: 50px 70px;
+        }
+        .card {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            box-sizing: border-box;
+            width: 100%;
+            height: 251px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+            background: white;
+            @include desktop
+            {
+                max-width: 1200px;
+            }
+            img {
+                display: flex;
+                height: 75%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 15px;
+            }
+            .new {
+                display: flex;
+                position: absolute;
+                width: 80px;
+                height: 19px;
+                justify-content: center;
+                align-items: center;
+                align-self: flex-end;
+                top: 13px;
+                right: 12px;
+                color: #008766;
+                font-size: 14px;
+                font-weight: 500;
+                border-radius: 2px;
+                background: $tertiary-color;
+            }
+            .content {
+                display: flex;
+                height: 25%;
+                flex-direction: row;
+                padding-left: 10px;
+                padding-right: 33px;
+                justify-content: space-between;
+                align-items: center;
+                .txt {
+                    display: flex;
+                    flex-direction: column;
+                .style-2 {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: black;
+                }
+                .style-3 {
+                    font-size: 17px;
+                    font-weight: 300;
+                    color: black;
+                }     
+                }
+                .fa-heart {
+                    color: #101010;
+                }
+            } 
+        }
+    }
+}
+
+/****** Footer ***********/
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 25px;
+    gap: 16px;
+    color: white;
+    background: #353535;
+    @include desktop
+    {
+        height: 54px;
+        flex-direction: row-reverse;
+        padding: 30px 25px;
+        gap: 70px;
+    }
+    .logo {
+        display: flex;
+        @include desktop
+    {
+        height: 27px;
+        align-items: center;
+        margin-top: 30px;
+    }
+    }
+    h2 {
+        font-family: $font-icons;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        font-size: 16px;
+        @include desktop
+        {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 35px;
+        }
+        .style-1 {
+            display: flex;
+            flex-direction: column;
+            font-weight: 500;
+            gap: 7px;
+            @include desktop
+            {
+            flex-direction: row;
+            }
+        }
+        .icon {
+            display: flex;
+            align-items: center;
+            gap: 11px;  
+        }
+        .fa-utensils {
+            color: #ffffff;
+        }
+        .fa-handshake-angle {
+            color: #ffffff;
+        }
+        .style-2 {
+            display: flex;
+            flex-direction: column;
+            font-weight: 400;
+            gap: 7px;
+            @include desktop
+            {
+            flex-direction: row;
+            gap: 20px;
+            }
+        }
+    }
+}
+
+/****** Menu ***********/
+.menu-header {
+    display: flex;
+    align-items: center;
+    .fa-arrow-left {
+        position: absolute;
+        left: 15px;
+        color: #353535;
+    }
+    h1 {
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+    }
+}
+
+.menu-style {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background: $bg-color;
+    @include desktop
+    {
+        background: white;
+    }
+    .picture {
+        display: flex;
+        width: 100%;
+        height: 275px;
+        object-fit: cover;
+    }
+    .menu {
+        display: flex;
+        width: 100%;
+        background: $bg-color;
+        box-sizing: border-box;
+        padding: 40px 13px;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        margin-top: -25px;
+        @include desktop
+        {
+            width: auto;
+            margin-right: 192px;
+            margin-left: 192px;
+        }
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+    }
+    .content {
+        display: flex;
+        width: 100%;
+        height: 27px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        @include desktop
+        {
+            justify-content: center;
+            gap: 24px;
+        }
+        h2 {
+            font-family: $font-icons;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 400;
+        }
+        .fa-heart {
+            color: #101010;
+        }
+    }
+    .box {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 10.5px;
+        .style-1 {
+            font-size: 16px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        .bar {
+            display: flex;
+            width: 40px;
+            border-bottom: $tertiary-color 3px solid;
+        }
+        .card {
+            display: flex;
+            flex-direction: row;
+            border-radius: 15px;
+            padding: 15px;
+            gap: 5px;
+            justify-content: space-between;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            background: white;
+        }
+        .content-2 {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .style-2 {
+            font-size: 18px;
+            font-weight: 500;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .style-3 {
+            font-size: 15px;
+            font-weight: 300;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .content-3 {
+            display: flex;
+            align-items: flex-end;
+            justify-items: flex-end;
+        }
+        .style-4 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+        }
+    }
+    .button {
+        display: flex;
+        width: 186px;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        border-radius: 25px;
+        border: none;
+        background: $button-color;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        &:hover {
+            background: $button-hover;
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+        }
+    }
